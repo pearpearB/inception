@@ -12,7 +12,7 @@ services:
     networks:
       - inception
     expose:
-      - "3306"
+      - '3306'
 
   wordpress:
     image: wordpress
@@ -21,13 +21,13 @@ services:
     depends_on:
       - mariadb
     volumes:
-      - ~/data/wordpress:/var/www/
+      - ~/data/wordpress:/var/www/wordpress
     env_file:
       - .env
     networks:
       - inception
     expose:
-      - "9000"
+      - '9000'
 
   nginx:
     image: nginx
@@ -36,11 +36,11 @@ services:
     depends_on:
       - wordpress
     volumes:
-      - ~/data/wordpress:/var/www/
+      - ~/data/wordpress:/var/www/wordpress
     networks:
       - inception
     ports:
-      - "443:443"
+      - '443:443'
 
 volumes:
   DB:
