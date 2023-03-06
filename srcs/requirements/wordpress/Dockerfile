@@ -24,6 +24,8 @@ RUN	mv /wp-config.php /var/www/wordpress/
 
 RUN	sed -i 's/\/run\/php\/php7.3-fpm.sock/0.0.0.0:9000/g' /etc/php/7.3/fpm/pool.d/www.conf
 
+RUN	mkdir -p /run/php/
+
 EXPOSE	9000
 
 ENTRYPOINT	["/bin/bash", "/wordpress_setup.sh"]
