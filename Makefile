@@ -1,5 +1,6 @@
 NAME=inception
 DOCKER_COMPOSE=docker-compose -f ./srcs/docker-compose.yml
+SET_WORK = -f srcs/requirements/linux_setup.sh
 
 all: mkvol up
 
@@ -9,6 +10,9 @@ mkvol:
 
 rmvol:
 	rm -rf ~/data
+
+setup:
+	sudo sh $(SET_WORK)
 
 up:
 	$(DOCKER_COMPOSE) up --build -d
