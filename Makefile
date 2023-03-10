@@ -1,6 +1,6 @@
 NAME=inception
 DOCKER_COMPOSE=docker-compose -f ./srcs/docker-compose.yml
-SETUP = -f srcs/requirements/tools/linux_setup.sh
+SETUP = -f ./srcs/requirements/tools/linux_setup.sh
 
 all: mkvol up
 
@@ -27,4 +27,4 @@ fclean: clean rmvol
 
 re: fclean all
 
-.PHONY: all mkvol rmvol up down clean fclean re
+.PHONY: all mkvol rmvol setup up down clean fclean re
