@@ -2,6 +2,7 @@ version: '3'
 
 services:
   mariadb:
+    container_name: mariadb
     image: mariadb
     build: ./requirements/mariadb/
     restart: always
@@ -15,6 +16,7 @@ services:
       - '3306'
 
   wordpress:
+    container_name: wordpress
     image: wordpress
     build: ./requirements/wordpress/
     restart: always
@@ -30,6 +32,7 @@ services:
       - '9000'
 
   nginx:
+    container_name: nginx
     image: nginx
     build: ./requirements/nginx
     restart: always
@@ -48,14 +51,14 @@ volumes:
     driver_opts:
       type: none
       o: bind
-      device: ~/data/mariadb
+      device: /home/jabae/data/mariadb
 
   WP:
     driver: local
     driver_opts:
       type: none
       o: bind
-      device: ~/data/wordpress
+      device: /home/jabae/data/wordpress
 
 networks:
   inception:
