@@ -5,11 +5,11 @@ SETUP = -f srcs/requirements/tools/linux_setup.sh
 all: mkvol up
 
 mkvol:
-	mkdir -p ~/data/wordpress
-	mkdir -p ~/data/mariadb
+	mkdir -p /home/jabae/data/wordpress
+	mkdir -p /home/jabae/data/mariadb
 
 rmvol:
-	rm -rf ~/data
+	rm -rf /home/jabae/data
 
 setup:
 	sudo sh $(SETUP)
